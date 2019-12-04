@@ -32,7 +32,7 @@ export class WCSortableTable extends HTMLElement {
     this.__column = null;
   }
 
-  connectedCallback() {
+  connectedCallback () {
     this.__table = document.createElement('table');
     this.appendChild(this.__table);
   }
@@ -50,7 +50,7 @@ export class WCSortableTable extends HTMLElement {
     return response.text();
   }
 
-  sortData(data) {
+  sortData (data) {
     if (this.__column === null) { return data; }
     const col = this.__column;
     const dir = this.__direction;
@@ -62,7 +62,7 @@ export class WCSortableTable extends HTMLElement {
     });
   }
 
-  headerClicked(e) {
+  headerClicked (e) {
     const column = e.target.cellIndex;
     this.__direction = (column !== this.__column)
       ? true : !this.__direction;
@@ -70,7 +70,7 @@ export class WCSortableTable extends HTMLElement {
     this.renderTable();
   }
 
-  renderTable() {
+  renderTable () {
     let data = [...this.__data];
     const table = document.createElement('table');
     const hr = document.createElement('tr');
@@ -79,10 +79,10 @@ export class WCSortableTable extends HTMLElement {
     // build the headers row
     const headers = data.shift();
     headers.forEach(header => {
-      const th = document.createElement('th')
+      const th = document.createElement('th');
       th.innerText = header;
       hr.appendChild(th);
-    })
+    });
     table.appendChild(hr);
 
     // sort the values
@@ -95,13 +95,12 @@ export class WCSortableTable extends HTMLElement {
         const td = document.createElement('td');
         td.innerText = cell;
         tr.appendChild(td);
-      })
+      });
       table.appendChild(tr);
-    })
+    });
     this.removeChild(this.__table);
     this.__table = table;
     this.appendChild(this.__table);
-    
   }
 }
 
