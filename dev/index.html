@@ -5,10 +5,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="module" src="../index.js"></script>
+  <script>
+    window.onload = () => {
+      document.getElementById('value-test').value = [
+        ["h1", "h2", "h3", "h4", "h5"],
+        ["aa", "bb", "cc", "dd", "ee"],
+        ["bb", "cc", "dd", "ee", "aa"],
+        ["cc", "dd", "ee", "aa", "bb"],
+        ["dd", "ee", "aa", "bb", "cc"],
+        ["ee", "aa", "bb", "cc", "dd"]
+      ];
+    }
+  </script>
 </head>
 <body>
 
   <wc-sortable-table src="sample.json"></wc-sortable-table>
+  <wc-sortable-table id="value-test"></wc-sortable-table>
 
 </body>
 </html>
