@@ -23,6 +23,22 @@ Then import the `index.js` file at the root of the package.
 
 ## Usage
 
+**Attributes**
+
+- `src` - load an external source file
+
+**Properties**
+
+- `value` - get/set the editor's contents
+
+### Basic Usage
+
+```html
+<wc-codemirror src="./assets/sample.js"></wc-codemirror>
+```
+
+***Demo: [WC-CodeMirror - Basic Usage][]***
+
 ### Load an array of data from an external JSON file
 
 ```html
