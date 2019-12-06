@@ -25,7 +25,7 @@ export class WCSortableTable extends HTMLElement {
     this.setSrc(value);
   }
 
-  get value () { return this.__data }
+  get value () { return this.__data; }
   set value (value) {
     this.setValue(value);
   }
@@ -51,7 +51,7 @@ export class WCSortableTable extends HTMLElement {
     }
   }
 
-  setValue(value) {
+  setValue (value) {
     this.__data = value;
     this.renderTable();
   }
