@@ -25,14 +25,20 @@ export class WCSortableTable extends HTMLElement {
     this.setSrc(value);
   }
 
+  get value () { return this.__data }
+  set value (value) {
+    this.setValue(value);
+  }
+
   constructor () {
     super();
     this.appendChild(template.content.cloneNode(true));
-    this.__table = null;
-    this.__column = null;
   }
 
   connectedCallback () {
+    this.__data = null;
+    this.__table = null;
+    this.__column = null;
     this.__table = document.createElement('table');
     this.appendChild(this.__table);
   }
@@ -43,6 +49,11 @@ export class WCSortableTable extends HTMLElement {
       this.__data = JSON.parse(this.source);
       this.renderTable();
     }
+  }
+
+  setValue(value) {
+    this.__data = value;
+    this.renderTable();
   }
 
   async fetch (src) {
