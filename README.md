@@ -38,8 +38,6 @@ Then import the `index.js` file at the root of the package.
 <wc-codemirror src="./assets/sample.js"></wc-codemirror>
 ```
 
-***Demo: [WC-CodeMirror - Basic Usage][]***
-
 ### Load an array of data from an external JSON file
 
 ```html
