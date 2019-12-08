@@ -46,6 +46,29 @@ This text will blink obnoxiously
 </wc-sortable-table>
 ```
 
+## Styling
+
+When a header is clicked, a class (ie asc|desc) is added marking the direction of the sort. The default styles for these classes are.
+
+```css
+.asc:after {
+  content: "▲";
+  color: gray;
+  font-size: .75rem;
+  vertical-align: text-top;
+  text-align:right;
+}
+
+.desc:after {
+  content: "▼";
+  color: gray;
+  font-size: .75rem;
+  vertical-align: text-top;
+  text-align: right;
+}
+```
+
+
 ***Demo: [wc-sortable-table - Demo][]***
 
 [wc-sortable-table - Demo]: https://vanillawc.github.io/wc-sortable-table/demo/index.html
