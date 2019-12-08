@@ -5,6 +5,22 @@ template.innerHTML = `
 table, th, td {
   border: 1px solid black;
 }
+
+.asc:after {
+  content: "▲";
+  color: gray;
+  font-size: .75rem;
+  vertical-align: text-top;
+  text-align:right;
+}
+
+.desc:after {
+  content: "▼";
+  color: gray;
+  font-size: .75rem;
+  vertical-align: text-top;
+  text-align: right;
+}
 </style>
 `;
 
@@ -39,6 +55,8 @@ export class WCSortableTable extends HTMLElement {
     this.__data = null;
     this.__table = null;
     this.__column = null;
+    this.__headers = null;
+    this.__selected = null;
     this.__table = document.createElement('table');
     this.appendChild(this.__table);
   }
@@ -74,6 +92,7 @@ export class WCSortableTable extends HTMLElement {
   }
 
   headerClicked (e) {
+    this.__selected = e.target.cellIndex;
     const column = e.target.cellIndex;
     this.__direction = (column !== this.__column)
       ? true : !this.__direction;
@@ -81,20 +100,45 @@ export class WCSortableTable extends HTMLElement {
     this.renderTable();
   }
 
+  styleHeaders () {
+    const dir = this.__direction ? 'asc' : 'desc';
+    const notDir = this.__direction ? 'asc' : 'desc';
+    for (const th of this.__headers.children) {
+      if (th.cellIndex === this.__selected) {
+        if (th.classList.contains(notDir)) {
+          th.classList.remove(notDir);
+        } else {
+          th.classList.add(dir);
+        }
+      } else {
+        if (th.classList.contains(dir)) {
+          th.classList.remove(dir);
+        }
+        if (th.classList.contains(notDir)) {
+          th.classList.remove(notDir);
+        }
+      }
+      console.dir(th);
+    }
+  }
+
   renderTable () {
     let data = [...this.__data];
+
     const table = document.createElement('table');
-    const hr = document.createElement('tr');
-    hr.addEventListener('click', e => this.headerClicked(e));
+
+    this.__headers = document.createElement('tr');
+    this.__headers.addEventListener('click', e => this.headerClicked(e));
 
     // build the headers row
     const headers = data.shift();
     headers.forEach(header => {
       const th = document.createElement('th');
       th.innerText = header;
-      hr.appendChild(th);
+      this.__headers.appendChild(th);
     });
-    table.appendChild(hr);
+    this.styleHeaders();
+    table.appendChild(this.__headers);
 
     // sort the values
     data = this.sortData(data);
