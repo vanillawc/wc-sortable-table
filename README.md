@@ -1,10 +1,10 @@
-[![GitHub release](https://img.shields.io/github/v/release/vanillawc/wc-sortable-table.svg)](https://github.com/vanillawc/wc-sortable-table/releases)
-[![npm](https://badgen.net/npm/v/@vanillawc/wc-sortable-table)](https://www.npmjs.com/package/@vanillawc/wc-sortable-table)
-[![downloads](https://badgen.net/npm/dt/@vanillawc/wc-sortable-table)](https://www.npmjs.com/package/@vanillawc/wc-sortable-table)
-[![Known Vulnerabilities](https://snyk.io/test/npm/@vanillawc/wc-sortable-table/badge.svg)](https://snyk.io/test/npm/@vanillawc/wc-sortable-table)
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vanillawc/wc-sortable-table/master/LICENSE)
+[![GitHub Releases](https://img.shields.io/github/v/release/vanillawc/wc-sortable-table.svg)](https://github.com/vanillawc/wc-sortable-table/releases)
+[![NPM Release](https://badgen.net/npm/v/@vanillawc/wc-sortable-table)](https://www.npmjs.com/package/@vanillawc/wc-sortable-table)
+[![Downloads](https://badgen.net/npm/dt/@vanillawc/wc-sortable-table)](https://www.npmjs.com/package/@vanillawc/wc-sortable-table)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vanillawc/wc-sortable-table/master/LICENSE)
 [![Published on WebComponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/@vanillawc/wc-sortable-table)
-[![Actions Status](https://github.com/vanillawc/wc-sortable-table/workflows/Release/badge.svg)](https://github.com/vanillawc/wc-sortable-table/actions)
+[![Latest Status](https://github.com/vanillawc/wc-sortable-table/workflows/Latest/badge.svg)](https://github.com/vanillawc/wc-sortable-table/actions)
+[![Release Status](https://github.com/vanillawc/wc-sortable-table/workflows/Release/badge.svg)](https://github.com/vanillawc/wc-sortable-table/actions)
 
 A sortable table vanilla web component
 
