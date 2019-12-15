@@ -1,28 +1,4 @@
-/* eslint no-undef: 0 */
-const template = document.createElement('template');
-template.innerHTML = `
-<style>
-table, th, td {
-  border: 1px solid black;
-}
-
-.asc:after {
-  content: "▲";
-  color: gray;
-  font-size: .75rem;
-  vertical-align: text-top;
-  text-align:right;
-}
-
-.desc:after {
-  content: "▼";
-  color: gray;
-  font-size: .75rem;
-  vertical-align: text-top;
-  text-align: right;
-}
-</style>
-`;
+import Interpolate from './util/interpolate.js';
 
 export class WCSortableTable extends HTMLElement {
   static get observedAttributes () {
@@ -30,6 +6,7 @@ export class WCSortableTable extends HTMLElement {
   }
 
   attributeChangedCallback (name, oldValue, newValue) {
+    if (!this.__initialized) { return; }
     if (oldValue !== newValue) {
       this[name] = newValue;
     }
@@ -48,35 +25,63 @@ export class WCSortableTable extends HTMLElement {
 
   constructor () {
     super();
-    this.appendChild(template.content.cloneNode(true));
-  }
-
-  connectedCallback () {
+    this.__initialized = false;
+    this.__theme = null;
     this.__data = null;
     this.__table = null;
     this.__column = null;
     this.__headers = null;
     this.__selected = null;
+  }
+
+  async connectedCallback () {
     this.__table = document.createElement('table');
-    this.appendChild(this.__table);
+
+    if (this.hasAttribute('theme')) {
+      this.__theme = document.createElement('template');
+      this.__theme.innerHTML = await this.getTheme();
+      this.attachShadow({ mode: 'open' });
+      this.shadowRoot.appendChild(this.__theme.content.cloneNode(true));
+      this.shadowRoot.appendChild(this.__table);
+    } else {
+      this.appendChild(this.__table);
+    }
+
+    if (this.hasAttribute('src')) {
+      this.setSrc();
+    }
+
+    this.__initialized = true;
+  }
+
+  async getTheme () {
+    const path = this.getAttribute('theme');
+    const contents = await this.fetchTheme(path);
+    return Interpolate(contents); 
+  }
+
+  async fetchTheme (src) {
+    const response = await fetch(src);
+    if (response.status !== 200) throw Error(`ERR ${response.status}: ${response.statusText}`);
+    return response.text();
   }
 
   async setSrc () {
     if (this.hasAttribute('src')) {
-      this.source = await this.fetch(this.src);
-      this.__data = JSON.parse(this.source);
-      this.renderTable();
+      this.__data = await this.fetchSrc(this.src);
+      this.render();
     }
+  }
+
+  async fetchSrc (src) {
+    const response = await fetch(src);
+    if (response.status !== 200) throw Error(`ERR ${response.status}: ${response.statusText}`);
+    return response.json();
   }
 
   setValue (value) {
     this.__data = value;
-    this.renderTable();
-  }
-
-  async fetch (src) {
-    const response = await fetch(src);
-    return response.text();
+    this.render();
   }
 
   sortData (data) {
@@ -97,7 +102,7 @@ export class WCSortableTable extends HTMLElement {
     this.__direction = (column !== this.__column)
       ? true : !this.__direction;
     this.__column = column;
-    this.renderTable();
+    this.render();
   }
 
   styleHeaders () {
@@ -118,15 +123,12 @@ export class WCSortableTable extends HTMLElement {
           th.classList.remove(notDir);
         }
       }
-      console.dir(th);
     }
   }
 
-  renderTable () {
+  render () {
     let data = [...this.__data];
-
     const table = document.createElement('table');
-
     this.__headers = document.createElement('tr');
     this.__headers.addEventListener('click', e => this.headerClicked(e));
 
@@ -153,9 +155,16 @@ export class WCSortableTable extends HTMLElement {
       });
       table.appendChild(tr);
     });
-    this.removeChild(this.__table);
-    this.__table = table;
-    this.appendChild(this.__table);
+
+    if (this.__theme) {
+      this.shadowRoot.removeChild(this.__table);
+      this.__table = table;
+      this.shadowRoot.appendChild(this.__table);
+    } else {
+      this.removeChild(this.__table);
+      this.__table = table;
+      this.appendChild(this.__table);
+    }
   }
 }
 
