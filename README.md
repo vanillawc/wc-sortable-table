@@ -46,29 +46,48 @@ This text will blink obnoxiously
 </wc-sortable-table>
 ```
 
+***Demo: [wc-sortable-table - Demo][]***
+
 ## Styling
 
-When a header is clicked, a class (ie asc|desc) is added marking the direction of the sort. The default styles for these classes are.
+By default, `<wc-sortable-table>` contains an un-styled `<table>` element in the lightDOM. That means, it will inherit any global CSS styles present on the site and can be styled directly using CSS.
 
-```css
-.asc:after {
-  content: "▲";
-  color: gray;
-  font-size: .75rem;
-  vertical-align: text-top;
-  text-align:right;
-}
+When a sort is applied, the `<th>` element selected receives either a `.asc` or `.desc` class depending on the direction of the sort.
 
-.desc:after {
-  content: "▼";
-  color: gray;
-  font-size: .75rem;
-  vertical-align: text-top;
-  text-align: right;
-}
+## Theming
+
+Alternatively, a theme for `<wc-sortable-table>` can be specified. This will encapsulate the element in a shadowDOM -- to prevent style bleed -- and apply the style provided.
+
+```html
+<wc-sortable-table src="sample.json" theme="assets/example-theme.html"></wc-sortable-table>
 ```
 
+A theme contains a `<style>` element with the CSS that will be applied to the element.
 
-***Demo: [wc-sortable-table - Demo][]***
+*example-theme.html*
+
+```html
+<style>
+  table, th, td {
+    border: 1px solid black;
+  }
+  
+  .asc:after {
+    content: "▲";
+    color: red;
+    font-size: .75rem;
+    vertical-align: text-top;
+    text-align:right;
+  }
+  
+  .desc:after {
+    content: "▼";
+    color: red;
+    font-size: .75rem;
+    vertical-align: text-top;
+    text-align: right;
+  }
+</style>
+```
 
 [wc-sortable-table - Demo]: https://vanillawc.github.io/wc-sortable-table/demo/index.html
