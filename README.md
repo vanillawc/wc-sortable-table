@@ -46,7 +46,7 @@ This text will blink obnoxiously
 </wc-sortable-table>
 ```
 
-***Demo: [wc-sortable-table - Demo][]***
+***Demo: [Basic Usage - Demo][]***
 
 ## Styling
 
@@ -61,6 +61,10 @@ Alternatively, a theme for `<wc-sortable-table>` can be specified. This will enc
 ```html
 <wc-sortable-table src="sample.json" theme="assets/example-theme.html"></wc-sortable-table>
 ```
+
+***Demo: [Basic Usage - 'theme' Attribute][]***
+
+## Creating Themes
 
 A theme contains a `<style>` element with the CSS that will be applied to the element.
 
@@ -90,4 +94,5 @@ A theme contains a `<style>` element with the CSS that will be applied to the el
 </style>
 ```
 
-[wc-sortable-table - Demo]: https://vanillawc.github.io/wc-sortable-table/demo/index.html
+[Basic Usage - Demo]: https://vanillawc.github.io/wc-sortable-table/demo/basic-usage.html
+[Basic Usage - 'theme' Attribute]: https://vanillawc.github.io/wc-sortable-table/demo/theme-attribute.html
