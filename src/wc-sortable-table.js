@@ -1,3 +1,4 @@
+/* eslint no-undef: 0 */
 import Interpolate from './util/interpolate.js';
 
 export class WCSortableTable extends HTMLElement {
@@ -57,7 +58,7 @@ export class WCSortableTable extends HTMLElement {
   async getTheme () {
     const path = this.getAttribute('theme');
     const contents = await this.fetchTheme(path);
-    return Interpolate(contents); 
+    return Interpolate(contents);
   }
 
   async fetchTheme (src) {
