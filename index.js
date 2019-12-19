@@ -1,1 +1,1 @@
-export * from './src/wc-sortable-table.js';
+export * from './dist/wc-sortable-table.js';
