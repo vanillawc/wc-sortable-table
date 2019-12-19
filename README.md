@@ -27,6 +27,7 @@ Then import the `index.js` file at the root of the package.
 **Attributes**
 
 - `src` - load an external source file
+- `theme` - an external theme file
 
 **Properties**
 
@@ -35,15 +36,7 @@ Then import the `index.js` file at the root of the package.
 ### Basic Usage
 
 ```html
-<wc-codemirror src="./assets/sample.js"></wc-codemirror>
-```
-
-### Load an array of data from an external JSON file
-
-```html
-<wc-sortable-table src="data.json">
-This text will blink obnoxiously
-</wc-sortable-table>
+<wc-sortable-table src="sample.json"></wc-sortable-table>
 ```
 
 ***Demo: [Basic Usage - Demo][]***
