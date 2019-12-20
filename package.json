@@ -13,8 +13,7 @@
   "repository": "https://github.com/vanillawc/wc-sortable-table/",
   "main": "src/wc-sortable-table.js",
   "scripts": {
-    "start": "npx live-server --open=demo",
-    "dev": "npx live-server --open=dev",
+    "start": "npx live-server --open=dev",
     "lint": "semistandard",
     "build": "npx rollup --config .config/rollup.config.js ",
     "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
