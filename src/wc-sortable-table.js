@@ -141,12 +141,15 @@ export class WCSortableTable extends HTMLElement {
       this.__headers.appendChild(th);
     });
     this.styleHeaders();
-    table.appendChild(this.__headers);
+    const thead = document.createElement('thead');
+    thead.appendChild(this.__headers);
+    table.appendChild(thead);
 
     // sort the values
     data = this.sortData(data);
 
     // build the data rows
+    const tbody = document.createElement('tbody');
     data.forEach(row => {
       const tr = document.createElement('tr');
       row.forEach(cell => {
@@ -154,8 +157,9 @@ export class WCSortableTable extends HTMLElement {
         td.innerText = cell;
         tr.appendChild(td);
       });
-      table.appendChild(tr);
+      tbody.appendChild(tr);
     });
+    table.appendChild(tbody);
 
     if (this.__theme) {
       this.shadowRoot.removeChild(this.__table);
