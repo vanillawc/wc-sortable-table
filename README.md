@@ -31,15 +31,13 @@ Then import the `index.js` file at the root of the package.
 
 **Properties**
 
-- `value` - get/set the editor's contents
+- `value` - get/set the table data
 
 ### Basic Usage
 
 ```html
 <wc-sortable-table src="sample.json"></wc-sortable-table>
 ```
-
-***Demo: [Basic Usage - Demo][]***
 
 ## Styling
 
@@ -54,8 +52,6 @@ Alternatively, a theme for `<wc-sortable-table>` can be specified. This will enc
 ```html
 <wc-sortable-table src="sample.json" theme="assets/example-theme.html"></wc-sortable-table>
 ```
-
-***Demo: [Basic Usage - 'theme' Attribute][]***
 
 ## Creating Themes
 
@@ -87,5 +83,6 @@ A theme contains a `<style>` element with the CSS that will be applied to the el
 </style>
 ```
 
-[Basic Usage - Demo]: https://vanillawc.github.io/wc-sortable-table/demo/basic-usage.html
-[Basic Usage - 'theme' Attribute]: https://vanillawc.github.io/wc-sortable-table/demo/theme-attribute.html
+## Demo
+
+### [WC-Sortable-Table - WebComponents.dev](https://webcomponents.dev/edit/f9IfeJX878gJZibfBcPO?sv=1&pm=1)
