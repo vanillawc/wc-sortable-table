@@ -1,6 +1,6 @@
 {
   "name": "@vanillawc/wc-sortable-table",
-  "version": "1.3.12",
+  "version": "1.3.13",
   "license": "MIT",
   "author": "Evan Plaice <evanplaice@gmail.com> (http://evanplaice.com/)",
   "description": "A sortable table vanilla web component",
