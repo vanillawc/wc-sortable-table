@@ -1,6 +1,6 @@
 {
   "name": "@vanillawc/wc-sortable-table",
-  "version": "1.3.13",
+  "version": "1.3.14",
   "license": "MIT",
   "author": "Evan Plaice <evanplaice@gmail.com> (http://evanplaice.com/)",
   "description": "A sortable table vanilla web component",
@@ -17,7 +17,8 @@
     "lint": "semistandard",
     "build": "npm run build:main && npm run build:min",
     "build:main": "npx rollup --config .config/main.config.js",
-    "build:min": "npx rollup --config .config/min.config.js",    "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
+    "build:min": "npx rollup --config .config/min.config.js",
+    "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
     "preversion": "npm run lint",
     "postversion": "git push --follow-tags"
   },
