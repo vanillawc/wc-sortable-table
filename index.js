@@ -9,7 +9,25 @@
 function interpolate (template, tags = {}) {
   const keys = Object.keys(tags);
   const values = Object.values(tags);
-  return new Function(...keys, `return \`${template}\`;`)(...values);
+  try {
+    return new Function(...keys, `return \`${template}\`;`)(...values);
+  } catch (e) {
+    throw new TemplateException(template, tags, e);
+  }
+}
+
+class TemplateException extends Error {
+  constructor (template, tags, message) {
+    super();
+    this.name = 'TemplateError';
+    let msg = '\n------------------\n';
+    msg += `Template: \`${template}\``;
+    msg += '\n------------------\n';
+    msg += `Tags: ${JSON.stringify(tags, null, 2)}`;
+    msg += '\n------------------\n';
+    msg += message;
+    this.message = msg;
+  }
 }
 
 /* eslint no-undef: 0 */
