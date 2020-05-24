@@ -1,5 +1,5 @@
 /* eslint no-undef: 0 */
-import Interpolate from '../node_modules/interpolate-es/index.js';
+import Interpolate from '../node_modules/@vanillaes/interpolate/index.js';
 
 export class WCSortableTable extends HTMLElement {
   static get observedAttributes () {
