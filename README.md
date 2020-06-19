@@ -1,26 +1,35 @@
-[![GitHub Releases](https://badgen.net/github/tag/vanillawc/wc-sortable-table)](https://github.com/vanillawc/wc-sortable-table/releases)
-[![NPM Release](https://badgen.net/npm/v/@vanillawc/wc-sortable-table)](https://www.npmjs.com/package/@vanillawc/wc-sortable-table)
-[![Bundlephobia](https://badgen.net/bundlephobia/minzip/@vanillawc/wc-sortable-table)](https://bundlephobia.com/result?p=@vanillawc/wc-sortable-table)
-[![MIT License](https://badgen.net/github/license/vanillawc/wc-sortable-table)](https://raw.githubusercontent.com/vanillawc/wc-sortable-table/master/LICENSE)
-[![Published on WebComponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/vanillawc/wc-sortable-table)
-[![Latest Status](https://github.com/vanillawc/wc-sortable-table/workflows/Latest/badge.svg)](https://github.com/vanillawc/wc-sortable-table/actions)
-[![Release Status](https://github.com/vanillawc/wc-sortable-table/workflows/Release/badge.svg)](https://github.com/vanillawc/wc-sortable-table/actions)
+<h1 align="center">&lt;wc-sortable-table&gt;: A HTML Table with Sort</h1>
 
-A sortable table vanilla web component
-
- <!-- TODO: Add video graphic here -->
-
------
+<div align="center">
+  <a href="https://github.com/vanillawc/wc-sortable-table/releases"><img src="https://badgen.net/github/tag/vanillawc/wc-sortable-table" alt="GitHub Releases"></a>
+  <a href="https://www.npmjs.com/package/@vanillawc/wc-sortable-table"><img src="https://badgen.net/npm/v/@vanillawc/wc-sortable-table" alt="NPM Releases"></a>
+  <a href="https://bundlephobia.com/result?p=@vanillawc/wc-sortable-table"><img src="https://badgen.net/bundlephobia/minzip/@vanillawc/wc-sortable-table" alt="Bundlephobia"></a>
+  <a href="https://raw.githubusercontent.com/vanillawc/wc-sortable-table/master/LICENSE"><img src="https://badgen.net/github/license/vanillawc/wc-sortable-table" alt="MIT License"></a>
+  <a href="https://www.webcomponents.org/element/vanillawc/wc-sortable-table"><img src="https://img.shields.io/badge/webcomponents.org-published-blue.svg" alt="Published on WebComponents.org"></a>
+  <a href="https://github.com/vanillawc/wc-sortable-table/actions"><img src="https://github.com/vanillawc/wc-sortable-table/workflows/Latest/badge.svg" alt="Latest Status"></a>
+  <a href="https://github.com/vanillawc/wc-sortable-table/actions"><img src="https://github.com/vanillawc/wc-sortable-table/workflows/Release/badge.svg" alt="Release Status"></a>
+</div>
 
 ## Installation
 
+*Installation*
 ```sh
 npm i @vanillawc/wc-sortable-table
 ```
 
-Then import the `index.js` file at the root of the package.
+*Import from NPM*
+```html
+<script type="module" src="node_modules/@vanillawc/wc-sortable-table/index.js"></script>
+```
 
------
+*Import from CDN*
+```html
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-sortable-table/index.js"></script>
+```
+
+## Demo
+
+Try it on [WebComponents.dev](https://webcomponents.dev/edit/f9IfeJX878gJZibfBcPO?sv=1&pm=1)
 
 ## Usage
 
@@ -82,7 +91,3 @@ A theme contains a `<style>` element with the CSS that will be applied to the el
   }
 </style>
 ```
-
-## Demo
-
-### [WC-Sortable-Table - WebComponents.dev](https://webcomponents.dev/edit/f9IfeJX878gJZibfBcPO?sv=1&pm=1)
