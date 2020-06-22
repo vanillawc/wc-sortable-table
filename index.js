@@ -37,23 +37,23 @@ class TemplateException extends Error {
 
 class WCSortableTable extends HTMLElement {
   static get observedAttributes () {
-    return ['src'];
+    return ['src']
   }
 
   attributeChangedCallback (name, oldValue, newValue) {
-    if (!this.__initialized) { return; }
+    if (!this.__initialized) { return }
     if (oldValue !== newValue) {
       this[name] = newValue;
     }
   }
 
-  get src () { return this.getAttribute('src'); }
+  get src () { return this.getAttribute('src') }
   set src (value) {
     this.setAttribute('src', value);
     this.setSrc(value);
   }
 
-  get value () { return this.__data; }
+  get value () { return this.__data }
   set value (value) {
     this.setValue(value);
   }
@@ -92,13 +92,13 @@ class WCSortableTable extends HTMLElement {
   async getTheme () {
     const path = this.getAttribute('theme');
     const contents = await this.fetchTheme(path);
-    return interpolate(contents);
+    return interpolate(contents)
   }
 
   async fetchTheme (src) {
     const response = await fetch(src);
-    if (response.status !== 200) throw Error(`ERR ${response.status}: ${response.statusText}`);
-    return response.text();
+    if (response.status !== 200) throw Error(`ERR ${response.status}: ${response.statusText}`)
+    return response.text()
   }
 
   async setSrc () {
@@ -110,8 +110,8 @@ class WCSortableTable extends HTMLElement {
 
   async fetchSrc (src) {
     const response = await fetch(src);
-    if (response.status !== 200) throw Error(`ERR ${response.status}: ${response.statusText}`);
-    return response.json();
+    if (response.status !== 200) throw Error(`ERR ${response.status}: ${response.statusText}`)
+    return response.json()
   }
 
   setValue (value) {
@@ -120,15 +120,15 @@ class WCSortableTable extends HTMLElement {
   }
 
   sortData (data) {
-    if (this.__column === null) { return data; }
+    if (this.__column === null) { return data }
     const col = this.__column;
     const dir = this.__direction;
     const comp = dir
       ? (a, b) => a < b
       : (a, b) => a > b;
     return data.sort((a, b) => {
-      return comp(a[col], b[col]) ? -1 : 1;
-    });
+      return comp(a[col], b[col]) ? -1 : 1
+    })
   }
 
   headerClicked (e) {
