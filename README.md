@@ -1,4 +1,4 @@
-<h1 align="center">&lt;wc-sortable-table&gt;: A HTML Table with Sort</h1>
+<h1 align="center">&lt;wc-sortable-table&gt; A HTML Table with Sort</h1>
 
 <div align="center">
   <a href="https://github.com/vanillawc/wc-sortable-table/releases"><img src="https://badgen.net/github/tag/vanillawc/wc-sortable-table" alt="GitHub Releases"></a>
