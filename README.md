@@ -4,10 +4,11 @@
   <a href="https://github.com/vanillawc/wc-sortable-table/releases"><img src="https://badgen.net/github/tag/vanillawc/wc-sortable-table" alt="GitHub Releases"></a>
   <a href="https://www.npmjs.com/package/@vanillawc/wc-sortable-table"><img src="https://badgen.net/npm/v/@vanillawc/wc-sortable-table" alt="NPM Releases"></a>
   <a href="https://bundlephobia.com/result?p=@vanillawc/wc-sortable-table"><img src="https://badgen.net/bundlephobia/minzip/@vanillawc/wc-sortable-table" alt="Bundlephobia"></a>
-  <a href="https://raw.githubusercontent.com/vanillawc/wc-sortable-table/master/LICENSE"><img src="https://badgen.net/github/license/vanillawc/wc-sortable-table" alt="MIT License"></a>
-  <a href="https://www.webcomponents.org/element/vanillawc/wc-sortable-table"><img src="https://img.shields.io/badge/webcomponents.org-published-blue.svg" alt="Published on WebComponents.org"></a>
   <a href="https://github.com/vanillawc/wc-sortable-table/actions"><img src="https://github.com/vanillawc/wc-sortable-table/workflows/Latest/badge.svg" alt="Latest Status"></a>
   <a href="https://github.com/vanillawc/wc-sortable-table/actions"><img src="https://github.com/vanillawc/wc-sortable-table/workflows/Release/badge.svg" alt="Release Status"></a>
+
+  <a href="https://discord.gg/8ur9M5"><img alt="Discord" src="https://img.shields.io/discord/723296249121603604?color=%23738ADB"></a>
+  <a href="https://www.webcomponents.org/element/vanillawc/wc-sortable-table"><img src="https://img.shields.io/badge/webcomponents.org-published-blue.svg" alt="Published on WebComponents.org"></a>
 </div>
 
 ## Installation
@@ -24,7 +25,7 @@ npm i @vanillawc/wc-sortable-table
 
 *Import from CDN*
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-sortable-table/index.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/vanillawc/wc-sortable-table@1/index.js"></script>
 ```
 
 ## Demo
@@ -91,3 +92,7 @@ A theme contains a `<style>` element with the CSS that will be applied to the el
   }
 </style>
 ```
+
+## Contributing
+
+See [CONTRIBUTING.md](https://github.com/vanillawc/vanillawc/blob/main/CONTRIBUTING.md)
