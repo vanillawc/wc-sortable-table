@@ -8,7 +8,7 @@ function interpolate(template, tags = {}) {
     throw new TemplateException(template, tags, e);
   }
 }
-class TemplateException extends Error {
+var TemplateException = class extends Error {
   constructor(template, tags, message) {
     super();
     this.name = "TemplateError";
@@ -20,10 +20,10 @@ class TemplateException extends Error {
     msg += message;
     this.message = msg;
   }
-}
+};
 
 // src/wc-sortable-table.js
-class WCSortableTable extends HTMLElement {
+var WCSortableTable = class extends HTMLElement {
   static get observedAttributes() {
     return ["src"];
   }
@@ -176,7 +176,7 @@ class WCSortableTable extends HTMLElement {
       this.appendChild(this.__table);
     }
   }
-}
+};
 customElements.define("wc-sortable-table", WCSortableTable);
 export {
   WCSortableTable

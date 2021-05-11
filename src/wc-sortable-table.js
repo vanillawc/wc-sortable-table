@@ -101,7 +101,8 @@ export class WCSortableTable extends HTMLElement {
     this.__selected = e.target.cellIndex
     const column = e.target.cellIndex
     this.__direction = (column !== this.__column)
-      ? true : !this.__direction
+      ? true
+      : !this.__direction
     this.__column = column
     this.render()
   }

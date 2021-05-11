@@ -15,16 +15,16 @@
   "scripts": {
     "start": "npx live-server --no-browser --port=5500 --open=dev",
     "lint": "esmtk lint",
-    "build": "npm run bundle && npm run minify",
-    "bundle": "esmtk bundle src/wc-sortable-table.js index.js",
-    "minify": "esmtk minify src/wc-sortable-table.js index.min.js",
+    "build": "npm run build:esm && npm run build:min",
+    "build:esm": "esmtk bundle src/wc-sortable-table.js index.js",
+    "build:min": "esmtk minify src/wc-sortable-table.js index.min.js",
     "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
     "preversion": "npm run lint",
     "postversion": "git push --follow-tags"
   },
   "devDependencies": {
     "@vanillaes/interpolate": "^1.4.0",
-    "esmtk": "^0.4.0"
+    "esmtk": "^0.5.6"
   },
   "standard": {
     "ignore": [
